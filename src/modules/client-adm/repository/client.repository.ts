@@ -6,7 +6,15 @@ import { ClientModel } from "./client.model";
 export default class ClientRepository implements ClientGateway {
 
   async add(entity: Client): Promise<void> {
-    throw new Error("Method not implemented.");
+
+    await ClientModel.create({
+      id: entity.id.id,
+      name: entity.name,
+      email: entity.email,
+      address: entity.address,
+      createdAt: entity.createdAt,
+      updatedAt: entity.updatedAt
+    })
   }
 
   async find(id: string): Promise<Client> {

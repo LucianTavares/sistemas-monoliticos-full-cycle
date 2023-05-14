@@ -6,7 +6,7 @@
 - `git clone https://github.com/LucianTavares/sistemas-monoliticos-full-cycle.git`
 
 2 - Mude para a pasta:
-- `cd fc-monolito`
+- `cd sistemas-monoliticos-full-cycle`
 
 3 - Baixe as dependências e execute os testes: 
 - `npm install`

@@ -1,3 +1,4 @@
+import Address from "../../../invoice/domain/value-object/address";
 import { ClientGateway } from "../../gateway/client.gateway";
 import { FindClientUseCaseInputDto, FindClientUseCaseOutputDto } from "./find-client.usecase.dto";
 
@@ -17,7 +18,15 @@ export default class FindClientUseCase {
       id: result.id.id,
       name: result.name,
       email: result.email,
-      address: result.address,
+      document: result.document,
+      address: new Address(
+        result.address.street,
+        result.address.number,
+        result.address.complement,
+        result.address.city,
+        result.address.state,
+        result.address.zipCode,
+      ),
       createdAt: result.createdAt,
       updatedAt: result.updatedAt
     }
